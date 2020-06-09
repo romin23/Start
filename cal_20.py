@@ -3,28 +3,28 @@ import math
 root = Tk()
 root.title("Calculator")                    #Title of Window
 
-root.iconbitmap('icon.ico')
+root.iconbitmap('icon.ico')                 #Adds icon to window (icon file must be in same directory) or just comment the line
 
 #====================================================================Variables==========================================================
 n1 = int()
 operation = str()
 
-#==================================================================Display screen=====================================================
+#==================================================================Display screen======================================================
 
-en = Entry(root,width=13,borderwidth = 2.5,bg = '#001437', fg = '#7898FB', font = ('Verdana',30) )
+en = Entry(root,width=13,borderwidth = 2.5,bg = '#001437', fg = '#7898FB', font = ('Verdana',30) ) #adds a entry box
 en.grid(row=0,column =0,columnspan=4)
 
-#====================================================================Functions========================================================
-def but_clk(val):
+#====================================================================Functions=========================================================
+def but_clk(val):                               #function to add values in entry
     curr = en.get()
     en.delete(0,END)
     en.insert(0,str(curr)+str(val))
 
-def clear():
+def clear():                                    #function  to clear 
     en.delete(0, END)
     click.set('Trig')
 
-def addd():
+def addd():                                    #function  to do addition
     nu1 = en.get()
     global n1
     global operation
@@ -32,7 +32,7 @@ def addd():
     n1 = int(nu1)
     en.delete(0, END)
 
-def subb():
+def subb():                                       #function  to subtract  
     nu1 = en.get()
     global n1
     global operation
@@ -40,7 +40,7 @@ def subb():
     n1 = int(nu1)
     en.delete(0, END)
 
-def mul():
+def mul():                                      #function  to multiply values
     nu1 = en.get()
     global n1
     global operation
@@ -48,7 +48,7 @@ def mul():
     n1 = int(nu1)
     en.delete(0, END)
 
-def div():
+def div():                                      #function  to devide the values
     nu1 = en.get()
     global n1
     global operation
@@ -56,7 +56,7 @@ def div():
     n1 = int(nu1)
     en.delete(0, END)
 
-def pow():
+def pow():                                      #function  to implement the power function
     nu1 = en.get()
     global n1
     global operation
@@ -64,7 +64,7 @@ def pow():
     n1 = int(nu1)
     en.delete(0, END)
 
-def fact():
+def fact():                                         #function to find factorial
     nu1 = en.get()
     global n1
     global operation
@@ -74,7 +74,7 @@ def fact():
 
 
 
-def equal():
+def equal():                                            #function  to get the final answer
     n2 = en.get()
     en.delete(0,END)
     
@@ -122,7 +122,7 @@ def equal():
     
 
 
-#====================================================================Button============================================================
+#====================================================================Button & Dropdown Menu============================================================
 
 
 but_pow = Button(root, text='Pow', padx =11,pady =25,command = pow, font = ('Verdana',15),bg = '#B8FB3C',fg = '#001437').grid(row=1, column = 1)
@@ -160,7 +160,6 @@ but9 = Button(root, text='9', padx =25,pady =25, command = lambda: but_clk(9), f
 
 but0 = Button(root, text='0', padx =25,pady =25, command = lambda: but_clk(0), font = ('Verdana',15),bg = '#001437', fg = '#7898FB'  ).grid(row=5, column = 0)
 
-#photo = PhotoImage(file = r"C:\Gfg\circle.png")
 but_add = Button(root, text='+' ,padx =21,pady =25,command = addd, font = ('Verdana',15),bg = '#B8FB3C',fg = '#001437').grid(row=4, column = 3)
 
 but_sub = Button(root, text='-', padx =25,pady =25,command = subb, font = ('Verdana',15),bg = '#B8FB3C',fg = '#001437').grid(row=3, column = 3)
